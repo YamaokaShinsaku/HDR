@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+
+# .vs
+OpenGL/.vs
+
+# Debug
+OpenGL/x64
+
+OpenGL/proto/x64
