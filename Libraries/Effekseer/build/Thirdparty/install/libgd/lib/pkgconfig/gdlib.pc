@@ -1,0 +1,9 @@
+libdir=C:/Users/bitma/Effekseer/build/ThirdParty/Install/libgd/lib
+includedir=C:/Users/bitma/Effekseer/build/ThirdParty/Install/libgd/include
+
+Name: gd
+Description: GD graphics library
+Version: ..
+Cflags: -I${includedir}
+Libs.private: optimized;C:/Users/bitma/Effekseer/build/ThirdParty/Install/zlib/lib/zlib.lib;debug;C:/Users/bitma/Effekseer/build/ThirdParty/Install/zlib/lib/zlibd.lib
+Libs: -L${libdir} -lgd
