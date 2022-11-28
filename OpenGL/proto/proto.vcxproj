@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Libraries\glad\src\glad.c" />
+    <ClCompile Include="FlyCamera.cpp" />
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Math.cpp" />
+    <ClCompile Include="MeshObj.cpp" />
+    <ClCompile Include="Mouse.cpp" />
+    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="tiny_obj_loader.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FlyCamera.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="Math.h" />
+    <ClInclude Include="MeshObj.h" />
+    <ClInclude Include="mouse.h" />
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="tiny_obj_loader.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{86e03df5-2f59-4632-a669-50764d14261a}</ProjectGuid>
+    <RootNamespace>proto</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\Libraries\GLEW\include\;$(SolutionDir)..\Libraries\SDL\include\;$(SolutionDir)..\Libraries\rapidjson\include\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_mixer.lib;SDL2_image.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\Libraries\SDL\lib\win\x86\;$(SolutionDir)..\Libraries\GLEW\lib\win\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\Libraries\GLEW\include\;$(SolutionDir)..\Libraries\SDL\include\;$(SolutionDir)..\Libraries\rapidjson\include\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_mixer.lib;SDL2_image.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\Libraries\SDL\lib\win\x86\;$(SolutionDir)..\Libraries\GLEW\lib\win\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\Libraries\Effekseer\Dev\Cpp\Effekseer\;$(SolutionDir)..\Libraries\Effekseer\Dev\Cpp\EffekseerRendererGL\;$(SolutionDir)..\Libraries\Effekseer\Dev\Cpp\Utils;$(SolutionDir)..\Libraries\Effekseer\build\ThirdParty\Install\zlib\include;$(SolutionDir)..\Libraries\Effekseer\build\ThirdParty\Install\libpng\include;$(SolutionDir)..\Libraries\Effekseer\build\ThirdParty\Install\libgd\include;$(SolutionDir)..\Libraries\Effekseer\build\ThirdParty\Install\glew\include;$(SolutionDir)..\Libraries\Effekseer\build\ThirdParty\Install\glfw\include;$(SolutionDir)..\Libraries\Effekseer\Downloads\OpenSoundMixer\src;$(SolutionDir)..\Libraries\glew\include\;$(SolutionDir)..\Libraries\SDL\include\;$(SolutionDir)..\Libraries\rapidjson\include\;$(SolutionDir)..\Libraries\glut\;$(SolutionDir)..\Libraries\glad\include\</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\Libraries\SDL\lib\win\x64\;$(SolutionDir)..\Libraries\GLEW\lib\x64;$(SolutionDir)../Libraries/Effekseer/build/ThirdParty/Install/zlib/lib;$(SolutionDir)../Libraries/Effekseer/build/ThirdParty/Install/zlib/lib/$(Configuration);$(SolutionDir)../Libraries/Effekseer/build/ThirdParty/Install/libpng/lib;$(SolutionDir)../Libraries/Effekseer/build/ThirdParty/Install/libpng/lib/$(Configuration);$(SolutionDir)../Libraries/Effekseer/build/ThirdParty/Install/libgd/lib;$(SolutionDir)../Libraries/Effekseer/build/ThirdParty/Install/libgd/lib/$(Configuration);$(SolutionDir)../Libraries/Effekseer/build/ThirdParty/Install/glew/lib;$(SolutionDir)../Libraries/Effekseer/build/ThirdParty/Install/glew/lib/$(Configuration);$(SolutionDir)../Libraries/Effekseer/build/ThirdParty/Install/OpenSoundMixer/lib;$(SolutionDir)../Libraries/Effekseer/build/ThirdParty/Install/OpenSoundMixer/lib/$(Configuration);$(SolutionDir)../Libraries/Effekseer/build/ThirdParty/Install/glfw/lib;$(SolutionDir)../Libraries/Effekseer/build/ThirdParty/Install/glfw/lib/$(Configuration)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_mixer.lib;SDL2_image.lib;glew32.lib;glfw3.lib;$(SolutionDir)..\Libraries\Effekseer\build\Dev\Cpp\Effekseer\Debug\Effekseer.lib;$(SolutionDir)..\Libraries\Effekseer\build\Dev\Cpp\EffekseerRendererGL\Debug\EffekseerRendererGL.lib;$(SolutionDir)..\Libraries\Effekseer\build\Dev\Cpp\Utils\Debug\Example_Utils.lib;libpng16_static.lib;zlibstatic.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\Libraries\Effekseer\Dev\Cpp\Effekseer\;$(SolutionDir)..\Libraries\Effekseer\Dev\Cpp\EffekseerRendererGL\;$(SolutionDir)..\Libraries\Effekseer\Dev\Cpp\Utils;$(SolutionDir)..\Libraries\Effekseer\build\ThirdParty\Install\zlib\include;$(SolutionDir)..\Libraries\Effekseer\build\ThirdParty\Install\libpng\include;$(SolutionDir)..\Libraries\Effekseer\build\ThirdParty\Install\libgd\include;$(SolutionDir)..\Libraries\Effekseer\build\ThirdParty\Install\glew\include;$(SolutionDir)..\Libraries\Effekseer\build\ThirdParty\Install\glfw\include;$(SolutionDir)..\Libraries\Effekseer\Downloads\OpenSoundMixer\src;$(SolutionDir)..\Libraries\glew\include\;$(SolutionDir)..\Libraries\SDL\include\;$(SolutionDir)..\Libraries\rapidjson\include\</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\Libraries\SDL\lib\win\x64\;$(SolutionDir)..\Libraries\GLEW\lib\x64;$(SolutionDir)../Libraries/Effekseer/build/ThirdParty/Install/zlib/lib;$(SolutionDir)../Libraries/Effekseer/build/ThirdParty/Install/zlib/lib/$(Configuration);$(SolutionDir)../Libraries/Effekseer/build/ThirdParty/Install/libpng/lib;$(SolutionDir)../Libraries/Effekseer/build/ThirdParty/Install/libpng/lib/$(Configuration);$(SolutionDir)../Libraries/Effekseer/build/ThirdParty/Install/libgd/lib;$(SolutionDir)../Libraries/Effekseer/build/ThirdParty/Install/libgd/lib/$(Configuration);$(SolutionDir)../Libraries/Effekseer/build/ThirdParty/Install/glew/lib;$(SolutionDir)../Libraries/Effekseer/build/ThirdParty/Install/glew/lib/$(Configuration);$(SolutionDir)../Libraries/Effekseer/build/ThirdParty/Install/OpenSoundMixer/lib;$(SolutionDir)../Libraries/Effekseer/build/ThirdParty/Install/OpenSoundMixer/lib/$(Configuration);$(SolutionDir)../Libraries/Effekseer/build/ThirdParty/Install/glfw/lib;$(SolutionDir)../Libraries/Effekseer/build/ThirdParty/Install/glfw/lib/$(Configuration)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_mixer.lib;SDL2_image.lib;glew32.lib;glfw3.lib;$(SolutionDir)..\Libraries\Effekseer\build\Dev\Cpp\Effekseer\Release\Effekseer.lib;$(SolutionDir)..\Libraries\Effekseer\build\Dev\Cpp\EffekseerRendererGL\Release\EffekseerRendererGL.lib;$(SolutionDir)..\Libraries\Effekseer\build\Dev\Cpp\Utils\Release\Example_Utils.lib;libpng16_static.lib;zlibstatic.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <IgnoreAllDefaultLibraries>
+      </IgnoreAllDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
