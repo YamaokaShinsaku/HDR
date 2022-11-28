@@ -33,3 +33,6 @@
 
 # .vs
 OpenGL/.vs
+
+# Debug
+OpenGL/x64
